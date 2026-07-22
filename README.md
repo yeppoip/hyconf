@@ -5,3 +5,4 @@ only things needed are hyprland, kitty, thunar, fastfetch, swaybg, and hyprlock.
 after that just drag and drop as needed and the fastfetch config isnt mine it comes from 
 https://github.com/sofijacom/dotfiles-fastfetch 
 so check that out as well but its included in my config folders
+make sure to drag the wallpaper files into your Pictures folder
