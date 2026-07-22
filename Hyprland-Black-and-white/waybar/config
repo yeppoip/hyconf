@@ -1,0 +1,101 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 8,
+  "modules-left": ["hyprland/workspaces", "custom/apps"],
+  "modules-center": ["wlr/taskbar", "clock"],
+  "modules-right": ["network", "battery", "pulseaudio", "backlight", "custom/bluelight", "cpu", "temperature", "tray"],
+
+  "custom/apps": {
+    "format": "󰔍",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+
+  "custom/bluelight": {
+    "format": "󰂯",
+    "on-click": "bash /home/nofel/.config/waybar/bluelight.sh toggle",
+    "on-scroll-up": "bash /home/nofel/.config/waybar/bluelight.sh up",
+    "on-scroll-down": "bash /home/nofel/.config/waybar/bluelight.sh down",
+    "tooltip": "Blue light filter: click to toggle, scroll to adjust"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "show-special": false,
+    "sort-by-number": true
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty", "kitty"],
+    "app_ids-mapping": {
+      "steam": "steam"
+    },
+    "rewrite": {
+      "Firefox": "󰈹",
+      "Code": "󰨞",
+      "kitty": "",
+      "Alacritty": ""
+    }
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "󰃞 {percent}%",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛 {usage}%"
+  },
+
+  "temperature": {
+    "interval": 5,
+    "thermal-zone": 0,
+    "format": " {temperatureF}°F",
+    "critical-threshold": 80
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
